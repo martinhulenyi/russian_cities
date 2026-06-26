@@ -1,0 +1,6 @@
+category: data
+filename: russian_cities.gpkg
+weight: 1
+title: Russian Cities (GeoPackage)
+description: Spatial boundaries of Russian cities in EPSG:4326
+type: application/geopackage+sqlite3
