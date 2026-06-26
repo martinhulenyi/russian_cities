@@ -53,10 +53,7 @@ Zelenogorsk, and Zheleznogorsk).
 
 The folder `maps_fed_subjects` contains snapshots of cities by federal subject (83 maps, .png format).
 
-## Citation
-
-> Hulényi, M. (2025). *Russian Cities Spatial Dataset* [Data set]. Zenodo. https://doi.org/[ADD DOI]
-
+ 
 ## License
 
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
