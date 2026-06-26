@@ -1,54 +1,35 @@
-data-publishing-template
-========================
 
-There is a step by step guide available <a href="http://training.theodi.org/resources/ODIDataTemplate.pdf" target="_blank">here</a>.
+Description:
+Data contains spatial information on Russian cities. We obtained the list of the cities contained in the spatial file from the Wikipedia list of Russian cities (https://archive.ph/IjKhf) and used them to scrape  the spatial data from OpenStreetMaps using the nominatimlite R package (OSM data scraped via the nominatimlite R package, approximately Q3–Q4 2023 - exact date and package version not recorded). We do not include in our analysis the illegally occupied Crimea and Sebastopol, which Russia has been claiming as its 84th and 85th subjects since 2014, or the four regions of Ukraine that is attempted to annex in 2022. In a small number of cases, we added the term “gorod” (city) to avoid retrieving the boundaries of higher-level administrative units rather than city-level geometries (Khabarovsk, Irkutsk, Magadan, Tomsk, Vologda, Stavropol, Lipetsk, and Onega.). Finally, for cities sharing the same name but located in different regions, we replaced “Russia” with the name of the corresponding federal subject in the query (Beryozovsky, Blagoveshchensk, Fokino, Guryevsk, Kirov, Kirovsk, Krasnoarmeysk, Krasnoslobodsk, Krasnoznamensk, Mikhaylovsk, Mirny, Nikolsk, Ozyorsk, Pavlovsk, Raduzhny, Sovetsk, Troitsk, Zarechny, Zelenogorsk, and Zheleznogorsk). 
 
-Provides a template for publishing a high quality open dataset. Each repository is designed to host a single dataset, consisting of one or more files.
+Geographic coverage: Russia (Russian Federation)
+CRS: EPSG:4326 
+Bounding box (EPSG:4326):
+  West:  19.842°E  (Kaliningrad)
+  East:  177.539°E (Chukotka)
+  South: 42.008°N
+  North: 69.711°N
 
-To create a dataset with open data certificate
-
-1) Fork the <a href="https://github.com/theodi/data-publishing-template" target="_blank">template repository</a> and rename the repository to something more akin to the dataset you will be publishing. This can be done from the respositories settings menu. At the same time re-enable issues from the same screen.
-
-2) Upload <b>data files</b> into the <b>data/</b> directory.
-
-3) For each file uploaded you need to add a <b>.data</b> file in the data directory that specifies the metadata for the file, this file should look like the examples and contain the following fields. Note that the category <b>must not</b> be changed from data.
-
-```
-category: data
-filename: filename.csv
-weight: 2
-title: June 2014
-description: Transactions in June 2014
-type: text/csv
-```
-
-Key:
-
-```
-weight: The position that the file is displayed on the page, 1 being first.
-
-type: The IANA mime type of the file, e.g. text/csv, application/json etc.
-```
-
-4) Edit <b>_config.yml</b> and fill in all the values that describe this dataset, changing the examples
-
-5) Point <b>certificates.theodi.org</b> at the front page of the site and let it automatically fill in values (then add the embed code to _config.yml)
-
-6) Note that many of the certificate fields can be filled in by using the github features that are available under the "Data quality and accuracy" sections.
+Data dictionary:
+file: russian_cities.gpkg
+columns: 
+	city - city name; 
+	subject: Federal subject in which the city is located in; 
+	subject_type: type of the federal subject the city is located in:
+									Republics, 
+									Krais (territories), 
+									Oblasts (regions), 
+									Federal cities, 
+									Autonomous oblast (autonomous region)
+									Autonomous okrugs (autonomous areas with a substantial ethnic minority)); 
+	district - Federal  district, in which the city is located in; 
+	pop_2011 - population of the city in 2011 (from https://archive.ph/OjT4I); 
+	border_distance - distance to the nearest international border in km; 
+	nearest_border - ISO 3 code of the country, with which the nearest border is shared; 
+	geom - column with geometric data.
 
 
-To customise the look and feel of your dataset site
-===================================================
-
-1) Replace logo.png in the img directory with your own company logo
-
-2) edit css/style.css to change colour schemes of the site.
-
-Additional sexiness
-===================
-
-The <a href="http://theodi.org" target="_blank">Open Data Institute</a> Github Data publisher automatically produces the following:
-
-* A webpage to host a dataset containing full embedded dcat metadata conforming to <a href="https://theodi.org/guides/marking-up-your-dataset-with-dcat" target="_blank">this best practice guideline</a>.
-
-* A datapackage.json file corresponding to the <a href="https://okfn.org/" target="_blank">Open Knowledge</a> guideline for producing a <a href="http://dataprotocols.org/tabular-data-package/" target="_blank">tabular data package</a>.
+Additional folder maps_fed_subjects contains snapshots of cities by the federal subject they are located in (83 maps in .png format)
+ 
+License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+contact: Martin Hulényi (martin.hulenyi@gmail.com)
