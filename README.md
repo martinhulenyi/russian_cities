@@ -32,4 +32,5 @@ columns:
 Additional folder maps_fed_subjects contains snapshots of cities by the federal subject they are located in (83 maps in .png format)
  
 License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+
 contact: Martin Hulényi (martin.hulenyi@gmail.com)
