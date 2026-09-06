@@ -3,6 +3,9 @@
 Spatial data file of Russian cities used in *Russia's Wartime Economy: 
 Measuring Regional Inequalities from Outer Space*.
 
+## Citation
+Barbakadze, I., J. Fidrmuc, M. Hulényi, and K. Kapanadze. 2026. “ Russia's Wartime Economy: Measuring Regional Inequalities From Outer Space.” Journal of Regional Science 0: 1–22. https://doi.org/10.1111/jors.70084.
+
 ## Description
 
 Data contains spatial information on Russian cities. We obtained the list 
